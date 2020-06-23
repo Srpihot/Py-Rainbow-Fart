@@ -25,6 +25,18 @@ _config={
     'need_rest_sound':'',# 当需要休息时的声音 （滴滴，宝贝，你该休息啦~注意身体健康呀）
     'annotation':'',# 注释的声音 (咦~你在干嘛鸭~哦！原来在备注。)
     'annotation2':'',# 注释的声音 (咦~你在干嘛鸭~哦！原来在备注。)
+    'if_sound':'',#if的声音 （if选择再多，都不如选择我~）
+    'while_sound':'',#while的声音（就让你掉入我爱的循环里吧~）
+    'for_sound':'',#for的声音（看来你还是喜欢我的for循环鸭~）
+    'else_sound':'',#else的声音（else的选择不如是我）
+    'try_sound':'',#try的声音（em……你想尝试一下吗）
+    'except_sound':'',#except的声音(看来你不喜欢尝试。)
+    'return_sound':'',#return的声音（你返回的是你的小心心嘛？）
+    'yield_sound':'',#yield的声音（你返回的是你的小心心嘛？）
+    'pass_sound':'',#pass的声音（pass~pass~）
+    'open_sound':'',#open的声音 （咿呀咿呀，你打开了我的心）
+    'break_sound':'',#break的声音 （呜呜，你想跳出我爱的循环嘛）
+    'continue_sound':'',#continue的声音（嘻嘻，continue一下。）
 }
 
 _sounds={
@@ -39,13 +51,26 @@ _sounds={
     'overtime_sound':'', #当加班时的声音 （呜呜，你怎么又在写代码鸭，这都天黑了，你也不陪陪我嘛。）
     'need_rest_sound':'',# 当需要休息时的声音 （滴滴，宝贝，你该休息啦~注意身体健康呀）
     'annotation':'',# 注释的声音 (咦~你在干嘛鸭~哦！原来在备注。)
+    'if_sound':'',#if的声音 （if选择再多，都不如选择我~）
+    'while_sound':'',#while的声音（就让你掉入我爱的循环里吧~）
+    'for_sound':'',#for的声音（看来你还是喜欢我的for循环鸭~）
+    'else_sound':'',#else的声音（else的选择不如是我）
+    'try_sound':'',#try的声音（em……你想尝试一下吗）
+    'except_sound':'',#except的声音(看来你不喜欢尝试。)
+    'return_sound':'',#return的声音（你返回的是你的小心心嘛？）
+    'yield_sound':'',#yield的声音（你返回的是你的小心心嘛？）
+    'pass_sound':'',#pass的声音（pass~pass~）
+    'open_sound':'',#open的声音 （咿呀咿呀，你打开了我的心）
+    'break_sound':'',#break的声音 （呜呜，你想跳出我爱的循环嘛）
+    'continue_sound':'',#continue的声音（嘻嘻，continue一下。）
+    
 }
 
 key_list=[]
 count_change=0
 count_time_rist = 0
 start_time=datetime.datetime.now()
-
+#import
 def get_config():
     with open('config','r',encoding='utf-8') as f:
         configs_tmp=f.readlines()
@@ -63,6 +88,7 @@ def get_config():
         _sounds[sounds_config[0]]=sounds_config[1]
     
     # print(_config)
+    # print(_sounds)
 
 def add_key_list(key_value):      
     key_list.append(key_value)
@@ -170,7 +196,91 @@ def happy_coding(key_value):
         remove_value(_config['annotation2'])
         for n in sound_p:
             n.start()
-        
+    
+    if _config['if_sound'] in tmp_str:
+        thead_one = threading.Thread(target=playsound, args=(_sounds['if_sound'],))
+        sound_p.append(thead_one)
+        remove_value(_config['if_sound'])
+        for n in sound_p:
+            n.start()
+
+    if _config['while_sound'] in tmp_str:
+        thead_one = threading.Thread(target=playsound, args=(_sounds['while_sound'],))
+        sound_p.append(thead_one)
+        remove_value(_config['while_sound'])
+        for n in sound_p:
+            n.start()  
+
+    if _config['for_sound'] in tmp_str:
+        thead_one = threading.Thread(target=playsound, args=(_sounds['for_sound'],))
+        sound_p.append(thead_one)
+        remove_value(_config['for_sound'])
+        for n in sound_p:
+            n.start()  
+    
+    if _config['else_sound'] in tmp_str:
+        thead_one = threading.Thread(target=playsound, args=(_sounds['else_sound'],))
+        sound_p.append(thead_one)
+        remove_value(_config['else_sound'])
+        for n in sound_p:
+            n.start()      
+
+    if _config['try_sound'] in tmp_str:
+        thead_one = threading.Thread(target=playsound, args=(_sounds['try_sound'],))
+        sound_p.append(thead_one)
+        remove_value(_config['try_sound'])
+        for n in sound_p:
+            n.start()      
+
+    if _config['except_sound'] in tmp_str:
+        thead_one = threading.Thread(target=playsound, args=(_sounds['except_sound'],))
+        sound_p.append(thead_one)
+        remove_value(_config['except_sound'])
+        for n in sound_p:
+            n.start()   
+
+
+    if _config['return_sound'] in tmp_str:
+        thead_one = threading.Thread(target=playsound, args=(_sounds['return_sound'],))
+        sound_p.append(thead_one)
+        remove_value(_config['return_sound'])
+        for n in sound_p:
+            n.start()      
+
+    if _config['yield_sound'] in tmp_str:
+        thead_one = threading.Thread(target=playsound, args=(_sounds['yield_sound'],))
+        sound_p.append(thead_one)
+        remove_value(_config['yield_sound'])
+        for n in sound_p:
+            n.start()  
+
+    if _config['pass_sound'] in tmp_str:
+        thead_one = threading.Thread(target=playsound, args=(_sounds['pass_sound'],))
+        sound_p.append(thead_one)
+        remove_value(_config['pass_sound'])
+        for n in sound_p:
+            n.start()  
+
+    if _config['open_sound'] in tmp_str:
+        thead_one = threading.Thread(target=playsound, args=(_sounds['open_sound'],))
+        sound_p.append(thead_one)
+        remove_value(_config['open_sound'])
+        for n in sound_p:
+            n.start()  
+
+    if _config['break_sound'] in tmp_str:
+        thead_one = threading.Thread(target=playsound, args=(_sounds['break_sound'],))
+        sound_p.append(thead_one)
+        remove_value(_config['break_sound'])
+        for n in sound_p:
+            n.start()  
+
+    if _config['continue_sound'] in tmp_str:
+        thead_one = threading.Thread(target=playsound, args=(_sounds['continue_sound'],))
+        sound_p.append(thead_one)
+        remove_value(_config['continue_sound'])
+        for n in sound_p:
+            n.start()  
 
     try:
         pa=re.search(_config['overtime_sound'],tmp_str).span()
