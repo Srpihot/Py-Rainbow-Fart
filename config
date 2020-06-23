@@ -1,5 +1,5 @@
 key_list_length=50
-sound_conf=yujie_sound_voice.conf
+sound_conf=luoli_sound_voice.conf
 good_count=1000
 Pool_core=4
 window_name=Visual Studio Code
